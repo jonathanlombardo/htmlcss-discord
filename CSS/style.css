@@ -52,8 +52,16 @@ a.btn.download {
   align-items: center;
 }
 
-a.btn.download:hover > .svg-download > path {
-  fill: #dce4fa;
+a.btn.download::before {
+  content: "";
+  display: block;
+  background-image: url(../IMG/dwnl.svg);
+  height: var(--smalltext);
+  aspect-ratio: 1;
+}
+
+a.btn.download:hover::before {
+  background-image: url(../IMG/dwnl-blue.svg);
 }
 
 /* HEADER */
@@ -97,7 +105,7 @@ nav a:hover {
 /* SECTIONS */
 
 section {
-  background-color: #f6f6f6;
+  background-color: yellow;
 }
 
 section .container,
@@ -174,10 +182,6 @@ section:last-of-type .container {
   background-color: black;
   color: #dce4fa;
 }
-
-/* a.btn.download:hover .svg-download > path {
-  fill: #dce4fa;
-} */
 
 section:last-of-type::after {
   display: none;
@@ -260,6 +264,9 @@ footer {
 footer .container:first-of-type {
   display: flex;
   padding-top: var(--space);
+  padding-bottom: var(--space);
+  margin-bottom: var(--space);
+  border-bottom: 1px solid white;
 }
 
 footer .footer-content-left {
@@ -309,8 +316,28 @@ footer .footer-content-left {
   width: fit-content;
 }
 
-.footer-content-left .social-wrapper svg path {
-  fill: white;
+.footer-content-left .social-wrapper a::before {
+  content: "";
+  display: block;
+  height: 30px;
+  aspect-ratio: 1;
+  background-size: contain;
+}
+
+.footer-content-left .social-wrapper a.twitter::before {
+  background-image: url(../IMG/social/twitter.svg);
+}
+
+.footer-content-left .social-wrapper a.insta::before {
+  background-image: url(../IMG/social/Instagram.svg);
+}
+
+.footer-content-left .social-wrapper a.facebook::before {
+  background-image: url(../IMG/social/facebook-circle.svg);
+}
+
+.footer-content-left .social-wrapper a.youtube::before {
+  background-image: url(../IMG/social/youtube-icon.svg);
 }
 
 footer .footer-content-right {
