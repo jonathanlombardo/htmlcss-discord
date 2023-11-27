@@ -44,7 +44,8 @@ a.btn {
 
 a.btn:hover {
   color: #404eed;
-  box-shadow: 0 8px rgba(0, 0, 0, 0.262);
+  box-shadow: 0 8px rgba(44, 44, 44, 0.251);
+  transition-duration: 0.1s;
 }
 
 a.btn.download {
@@ -251,7 +252,7 @@ section .section-content-txt p {
   padding-top: calc(var(--space) / 2);
 }
 
-section:nth-of-type(2n + 1) .container {
+section:nth-of-type(even) .container {
   flex-direction: row-reverse;
 }
 
