@@ -53,7 +53,7 @@ a.btn.download {
 }
 
 a.btn.download:hover > .svg-download > path {
-  fill: #404eed;
+  fill: #dce4fa;
 }
 
 /* HEADER */
@@ -100,7 +100,8 @@ section {
   background-color: #f6f6f6;
 }
 
-section .container {
+section .container,
+.jambotron .container {
   padding-top: var(--space);
   padding-bottom: var(--space);
   display: flex;
@@ -108,38 +109,38 @@ section .container {
   align-items: center;
 }
 
-section:nth-of-type(2n + 2) {
+section:nth-of-type(odd) {
   background-color: #ffffff;
 }
 
-.wave {
+section:nth-of-type(even)::before,
+section:nth-of-type(even)::after {
+  content: "";
+  background-image: url(../IMG/wave-wht.svg);
+  height: 100px;
   display: block;
 }
 
-.wave path {
-  fill: #ffffff;
-}
-
-section:nth-of-type(2n + 2) .wave path {
-  fill: #f6f6f6;
+section:nth-of-type(even)::before {
+  transform: scale(-1, -1);
 }
 
 /* EXTERNAL SECTION */
 
-section:first-of-type .container,
+.jambotron .container,
 section:last-of-type .container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section:first-of-type {
+.jambotron {
   background-image: url(../IMG/jumbo.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-section:first-of-type .section-content {
+.jambotron .section-content {
   display: flex;
   width: 70%;
   flex-direction: column;
@@ -148,34 +149,38 @@ section:first-of-type .section-content {
   color: #dce4fa;
 }
 
-section:first-of-type h1 {
+.jambotron h1 {
   font-size: var(--titletext);
   font-weight: 900;
 }
 
-section:first-of-type p,
-section:first-of-type .btn-wrapper {
+.jambotron p,
+.jambotron .btn-wrapper {
   font-size: var(--smalltext);
   font-weight: 600;
 }
 
-section:first-of-type .btn-wrapper {
+.jambotron .btn-wrapper {
   display: flex;
   justify-content: center;
   gap: 40px;
 }
 
-section:first-of-type .svg-download {
+.jambotron .svg-download {
   height: var(--smalltext);
 }
 
-section:first-of-type a.btn:hover {
+.jambotron a.btn:hover {
   background-color: black;
   color: #dce4fa;
 }
 
-a.btn.download:hover .svg-download > path {
+/* a.btn.download:hover .svg-download > path {
   fill: #dce4fa;
+} */
+
+section:last-of-type::after {
+  display: none;
 }
 
 section:last-of-type .section-content {
