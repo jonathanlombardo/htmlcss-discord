@@ -147,6 +147,7 @@ section:last-of-type .container {
   background-image: url(../IMG/jumbo.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .jambotron .section-content {
